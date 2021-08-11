@@ -8,8 +8,9 @@ const Header = ({ siteTitle }) =>
 { 
   let [animate, setAnimate] = React.useState(true);
 
+  
   React.useEffect(()=> {
-
+    //Save to temp storage, so only do animation upon first access of site
     if(sessionStorage.getItem("fLoadKey") == null){
       setAnimate(true);
       sessionStorage.setItem("fLoadKey", 1);
@@ -26,7 +27,7 @@ const Header = ({ siteTitle }) =>
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
+      <ul className={animate ? "navbar-nav fade-in": "navbar-nav"}>
           <li className="nav-item">
              <Link to="/" className="nav-link" activeClassName="active">Home</Link>
            </li>
