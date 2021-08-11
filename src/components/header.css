@@ -1,0 +1,17 @@
+.custom {
+    transition: top 5s;
+    -moz-transition: top 5s;
+    -webkit-transition: top 5s;
+    -o-transition: top 5s;
+    background-color: orange;
+  }
+
+  .fade-in{
+    animation: fade 0.9s ease-in;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  }
